@@ -9,6 +9,7 @@ RUN apt-get install -y nodejs npm
 ENV USER root
 RUN npm install -g express-generator
 RUN npm install express --save
+RUN npm install -g mysql
 RUN useradd -ms /bin/bash user
 COPY app.js /home/user/app.js
 COPY start.sh /home/user/start.sh
