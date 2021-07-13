@@ -1,4 +1,4 @@
-# Currency Exchange API – NodeJS
+# NUS Money API – NodeJS
 
 docker run -d -p 8080:8080 u1ih/nodejs-api
 
