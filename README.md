@@ -4,7 +4,7 @@ Using u1i/nodejs-api as the start point, this project is for learning Docker con
 
 A. Fully understand each step to setup and run app.js (from u1i/nodejs-api repo) with nodejs as a backend API service in a Docker container.  Within Google Cloud Shell Editor, be able to manually clone, build and start the service in a Docker container rather than just being able to start the service that lecturer has deployed in Google Cloud.
 
-B. Replicate step 1 for the NUSmoney app.  Add javascript files for NUSmoney app backend and learn how to run it as a backend API service in a Docker container.  To achieve this, need to learn how to install MYSQL client in the Docker container when setting it up.  Aside from the learning value, this would have addressed a real problem faced during the NUSmoney project.  After the NUSmoney backend was completed, each front end developer who wanted to test their front end application's interaction with the backend had to manually copy and install the backend components then run the API service before testing the front end.  Using the Docker container would have simplified all that.
+B. Replicate step 1 for the NUSmoney app.  Add javascript files for NUSmoney app backend and learn how to run it as a backend API service in a Docker container.  To achieve this, need to learn how to install MYSQL client in the Docker container when setting it up.  Aside from the learning value, this would have addressed a real problem faced during the NUSmoney project.  After the NUSmoney backend was completed, each front end developer who wanted to test their front end application's interaction with the backend had to manually copy and install the backend components then run the backend API service on localhost before testing the front end.  Using the Docker container would have simplified all that.  Another alternative solution would have been to put the backend on cloud.
 
 C. Automate the setup, build, publish and deploy for the NUSmoney app in github workflow using a yaml file so that any changes to NUSmonay app are automatically deployed.
 
@@ -18,7 +18,8 @@ A. Setup and run app.js
 6. docker build . -t nusmoney => builds the docker container executing each line in Dockerfile, which include installing various packages needed
 7. docker run -d -p 8080:8080 nusmoney => runs the app.js API service within the Docker container at port 8080 => this is done by executing the instruction found in the CMD line in the Dockerfile => the instruction is to run the shell script start.sh => the shell script contains instruction to run node app.js, therefore starting or running the API services found in app.js
 8. curl -i http://localhost:8080/fx => test by calling the API end point (at port 8080) using curl command.
-9. 
+
+Sidebar: Initially forgot that whilst trying to get the manual steps up and running for Docker container, the github workflow contained .yml file for Setup, Build, Publish and Deploy to lecturer's Google Cloud so each changes were being made to files in this fork, github workflow was trying to do this even though it failed because lecturer's Google Cloud secret's were available.  In addition, had not changed maintainer e-mail 
 
 ========================================
 
