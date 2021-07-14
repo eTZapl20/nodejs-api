@@ -8,7 +8,7 @@ B. Replicate step 1 for the NUSmoney app.  Add NUSmoney app backend files (.js) 
 
 C. Automate the setup, build, publish and deploy for the NUSmoney app in github workflow using a yaml file so that any changes to NUSmonay app are automatically deployed.
 
-Use this readme page to document the understanding, activities carried out and learning.
+Use this readme page to document the understanding, activities carried out and learning.  Address changes.
 
 A. Setup and run app.js in Docker container
 1. In GitHub, fork u1inodejs-api to create this repo.
