@@ -11,26 +11,35 @@ C. Automate the setup, build, publish and deploy for the NUSmoney app in github 
 Document the testing and lessons learnt, as there will be many.
 
 A. Setup and run app.js in Docker container
-1. Fork u1inodejs-api to create this repo.
-2. Start Google Cloud Shell Editor and run following.
+1. In GitHub, fork u1inodejs-api to create this repo.
+2. Start Google Cloud Shell Editor and run following in Google Clound Shell Editor command line.
 3. git clone https://github.com/eTZapl20/nodejs-api => clones the source from github into "local" VM instance started up by Google Cloud Shell Editor
-5. cd nodejs-api => change directory to nodejs-api
-6. docker build . -t nodejs-api => builds the docker container executing each line in Dockerfile, which include installing various packages needed
-7. docker run -d -p 8080:8080 nodejs-api => runs the app.js API service within the Docker container at port 8080 => this is done by executing the instruction found in the CMD line in the Dockerfile => the instruction is to run the shell script start.sh => the shell script contains instruction to run node app.js, therefore starting or running the API services found in app.js
-8. curl -i http://localhost:8080/fx => test by calling the API end point (at port 8080) using curl command.
-9. docker kill $(docker ps -q) => kill processes in Docker container when no longer needed.
+4. cd nodejs-api => change directory to nodejs-api
+5. docker build . -t nodejs-api => builds the docker container image executing each line in Dockerfile, which include installing various packages needed
+6. docker run -d -p 8080:8080 nodejs-api => runs docker container instance with app.js API service at port 8080 => this is done by executing the instruction found in the CMD line in the Dockerfile => the instruction is to run the shell script start.sh => the shell script contains instruction to run node app.js, therefore starting or running the API services found in app.js
+7. curl -i http://localhost:8080/fx => test by calling the API end point (at port 8080) using curl command.
+8. docker kill $(docker ps -q) => kills instances of Docker containers when no longer needed.
 
 B. Setup and run NUSmoney backend in Docker container
-1. NUSmoney backend is similar to app.js with added feature of nodejs interacting mysql client to query database on NUS database server.
+1. NUSmoney backend is similar to app.js with added feature of nodejs interacting mysql client to query database on NUS database server.  Update GitHub repo with necessary changes.
 2. Copy NUSmoney backend files main.js, database.js and aggregator.js into this repo.
-3. Modify start.sh shell script to run node main.js instead of app.js.
-4. Modify Dockerfile to copy these 3 files into /home/user instead of app.js.
-5. Add line to Dockerfile to install mysql: 
+3. Modify Dockerfile to copy these 3 files into /home/user instead of app.js.
+4. Add line to Dockerfile to install mysql: RUN npm install --save mysql body-parser cors dotenv
+5. Modify start.sh shell script to run node main.js instead of app.js.
+6. GitHub repo is ready so go back to Google Cloud Shell Editor and perform the following steps.
+7. Before starting kill previous Docker container instances to avoid confusion.
+8. rm -r nodejs-api => delete the nodejs-api directory that contains old version of package
+9. git clone https://github.com/eTZapl20/nodejs-api => clones latest version from GitHub
+10. cd nodejs-api
+11. docker build . -t nusmoney
+12. docker run -d -p 8080:8080 nusmoney
+13. curl -i http://localhost:8080/users/by-user-id/ => one of the APIs in NUSmoney app that calls database and returns user data.
+14. curl -i http://localhost:8080/ => addition API created to test that msg is returned without having to call database because step 13 was returning 
 
 
 ========================================
 
-Documentation copied over from u1i/nodejs-api readme.
+Readme from original repo u1i/nodejs-api.  Will clean up later.
 
 docker run -d -p 8080:8080 u1ih/nodejs-api
 
