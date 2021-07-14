@@ -36,4 +36,4 @@ B. Setup and run NUSmoney backend in Docker container
 13. curl -i http://localhost:8080/users/by-user-id/ => one of the APIs in NUSmoney app that calls database and returns user data.
 14. curl -i http://localhost:8080/ => addition API created to test that msg is returned without having to call database because step 13 was returning.  
 
-C.  Create a GitHub workflow for build and test.
+C.  Create a GitHub workflow for build and test specifically node main.js.
