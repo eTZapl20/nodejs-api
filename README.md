@@ -35,5 +35,9 @@ B. Setup and run NUSmoney backend in Docker container
 12. docker run -d -p 8080:8080 nusmoney
 13. curl -i http://localhost:8080/users/by-user-id/ => one of the APIs in NUSmoney app that calls database and returns user data.
 14. curl -i http://localhost:8080/ => addition API created to test that msg is returned without having to call database because step 13 was returning.  
+15. Step 13 & 14 failed.  Refer to test documentation in wiki.
 
-C.  Create a GitHub workflow for build and test specifically node main.js.
+C.  Create a GitHub workflow for build and test specifically node main.js.  
+1. Created simple node.js test workflow using template.  
+2. Failed to run a proper test after build but displayed some dummy messages to start understanding the workflow.  
+3. Need more time to fully understand.  Refer to workflow runs in Actions.  
