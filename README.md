@@ -6,7 +6,7 @@ A. Fully understand each step to setup and run app.js (forked from u1i/nodejs-ap
 
 B. Replicate step 1 for the NUSmoney app.  Add NUSmoney app backend files (.js) to repo and figure out how to run it as a backend API service in a Docker container.  To achieve this, need to learn how to install MYSQL client in the Docker container when setting it up.  Aside from the learning value, this would have addressed a real problem faced during the NUSmoney project.  After the NUSmoney backend was completed, each front end developer who wanted to test their front end application's interaction with the backend had to manually copy and install the backend components then run the backend API service on localhost before testing the front end.  Using the Docker container would have simplified all that.  Another alternative solution would have been to put the backend on cloud.
 
-C. Automate the setup, build, publish and deploy for the NUSmoney app in github workflow using a yaml file so that any changes to NUSmonay app are automatically deployed.
+C. Automate the setup, build, publish and deploy for the NUSmoney app in github workflow using a yaml file so that any changes to NUSmonay app are automatically deployed.  Decided original step C was too challenging given limited time.  Instead explore a GitHub workflow for testing.
 
 Use this readme page to document the understanding, activities carried out and learning.  Address changes.
 
