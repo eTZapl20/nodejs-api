@@ -3,6 +3,11 @@ const express = require("express");
 
 router = express.Router();
 
+// added this to test whether basic, non-database related API works.
+app.get("/", (req, res) => {
+ res.send(["Hello! This non-database API works."]);
+});
+
 router.get("/users/by-user-id", (request, response) => {
   database.connection.query(
     `select first_name, last_name, high_risk, medium_risk, low_risk
