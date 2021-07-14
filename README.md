@@ -10,17 +10,23 @@ C. Automate the setup, build, publish and deploy for the NUSmoney app in github 
 
 Document the testing and lessons learnt, as there will be many.
 
-A. Setup and run app.js
+A. Setup and run app.js in Docker container
 1. Fork u1inodejs-api to create this repo.
 2. Start Google Cloud Shell Editor and run following.
 3. git clone https://github.com/eTZapl20/nodejs-api => clones the source from github into "local" VM instance started up by Google Cloud Shell Editor
 5. cd nodejs-api => change directory to nodejs-api
-6. docker build . -t nusmoney => builds the docker container executing each line in Dockerfile, which include installing various packages needed
-7. docker run -d -p 8080:8080 nusmoney => runs the app.js API service within the Docker container at port 8080 => this is done by executing the instruction found in the CMD line in the Dockerfile => the instruction is to run the shell script start.sh => the shell script contains instruction to run node app.js, therefore starting or running the API services found in app.js
+6. docker build . -t nodejs-api => builds the docker container executing each line in Dockerfile, which include installing various packages needed
+7. docker run -d -p 8080:8080 nodejs-api => runs the app.js API service within the Docker container at port 8080 => this is done by executing the instruction found in the CMD line in the Dockerfile => the instruction is to run the shell script start.sh => the shell script contains instruction to run node app.js, therefore starting or running the API services found in app.js
 8. curl -i http://localhost:8080/fx => test by calling the API end point (at port 8080) using curl command.
 9. docker kill $(docker ps -q) => kill processes in Docker container when no longer needed.
 
-Sidebar: Initially forgot that whilst trying to get the manual steps up and running for Docker container, the github workflow contained .yml file for Setup, Build, Publish and Deploy to lecturer's Google Cloud so each changes were being made to files in this fork, github workflow was trying to do this even though it failed because lecturer's Google Cloud secret's were available.  In addition, had not changed maintainer e-mail 
+B. Setup and run NUSmoney backend in Docker container
+1. NUSmoney backend is similar to app.js with added feature of nodejs interacting mysql client to query database on NUS database server.
+2. Copy NUSmoney backend files main.js, database.js and aggregator.js into this repo.
+3. Modify start.sh shell script to run node main.js instead of app.js.
+4. Modify Dockerfile to copy these 3 files into /home/user instead of app.js.
+5. Add line to Dockerfile to install mysql: 
+
 
 ========================================
 
