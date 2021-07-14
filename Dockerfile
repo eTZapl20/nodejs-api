@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 MAINTAINER t0921328@u.nus.edu
 EXPOSE 8080
+EXPOSE 3306
 ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Singapore
 
