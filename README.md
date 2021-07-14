@@ -18,7 +18,7 @@ A. Setup and run app.js
 6. docker build . -t nusmoney => builds the docker container executing each line in Dockerfile, which include installing various packages needed
 7. docker run -d -p 8080:8080 nusmoney => runs the app.js API service within the Docker container at port 8080 => this is done by executing the instruction found in the CMD line in the Dockerfile => the instruction is to run the shell script start.sh => the shell script contains instruction to run node app.js, therefore starting or running the API services found in app.js
 8. curl -i http://localhost:8080/fx => test by calling the API end point (at port 8080) using curl command.
-9. docker kill $(docker ps -q) => kill processes when no longer needed.
+9. docker kill $(docker ps -q) => kill processes in Docker container when no longer needed.
 
 Sidebar: Initially forgot that whilst trying to get the manual steps up and running for Docker container, the github workflow contained .yml file for Setup, Build, Publish and Deploy to lecturer's Google Cloud so each changes were being made to files in this fork, github workflow was trying to do this even though it failed because lecturer's Google Cloud secret's were available.  In addition, had not changed maintainer e-mail 
 
