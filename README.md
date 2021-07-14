@@ -1,10 +1,16 @@
 # NUS Money API – NodeJS
 
-Using u1i/nodejs-api as the start point, this project is for learning the CI/CD piepline using the NUSmoney app in the following progressive steps.  With a very basic starting knowledge, it may not be possible to complete all steps by project show and tell due date but attempt will be made to progress as far as possible.
+Using u1i/nodejs-api as the start point, this project is for learning the CI/CD piepline using the NUSmoney app in the following progressive steps.  With a very basic starting knowledge, it may not be possible to complete all steps by project show and tell date but will try to make as much progress as possible.
 
-1. Fully understand each step to run app.js (from u1i/nodejs-api repo) as a backend API service in a Docker container.  Within Google Cloud Shell Editor, be able to manually clone, build and start the service in a Docker container rather than just being able to start the service that lecturer has deployed in Google Cloud.  Document understanding in this project.
-2. Add javascript files for NUSmoney app backend and learn how to run it as a backend API service in a Docker container.  Additional step required is to install MYSQL client in the Docker container.
-3. 
+1. Fully understand each step to setup and run app.js (from u1i/nodejs-api repo) as a backend API service in a Docker container.  Within Google Cloud Shell Editor, be able to manually clone, build and start the service in a Docker container rather than just being able to start the service that lecturer has deployed in Google Cloud.
+2. Replicate step 1 for the NUSmoney app.  Add javascript files for NUSmoney app backend and learn how to run it as a backend API service in a Docker container.  To achieve this, need to learn how to install MYSQL client in the Docker container when setting it up.
+3. Automate the steup, build, publish and deploy for the NUSmoney app in github workflow using a yaml file so that any changes to NUSmonay app are automatically deployed.
+
+Document the testing and lessons learnt, as there will be many.
+
+========================================
+
+Documentation copied over from u1i/nodejs-api readme.
 
 docker run -d -p 8080:8080 u1ih/nodejs-api
 
