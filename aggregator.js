@@ -4,7 +4,7 @@ const express = require("express");
 router = express.Router();
 
 // added this to test whether basic, non-database related API works.
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
  res.send(["Hello! This non-database API works."]);
 });
 
